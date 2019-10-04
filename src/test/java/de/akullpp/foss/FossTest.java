@@ -64,4 +64,16 @@ class FossTest {
 
         assertThat(result).containsExactly(new SimpleEntry<>("owner2", Collections.singletonList("repository")));
     }
+
+    @Test
+    @DisplayName("Should rebuild GitHub URLs from owner and repository")
+    void Should_Rebuild_Github_Urls_From_Owner_And_Repository() {
+        String owner = "owner";
+        String repository = "repository";
+
+        String result = Foss.rebuildUrl(owner, repository);
+
+        String expected = String.format("https://github.com/%s/%s", owner, repository);
+        assertThat(result).isEqualTo(expected);
+    }
 }
