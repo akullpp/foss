@@ -31,7 +31,7 @@ class LicenseTest {
 
         String result = license.toString();
 
-        String expected = String.format("%s\t\thttps://github.com/%s/%s", licenseName, ownerName, repositoryName);
+        String expected = String.format("%s\t\t\t\t\thttps://github.com/%s/%s", licenseName, ownerName, repositoryName);
         assertThat(result).isEqualTo(expected);
     }
 }
